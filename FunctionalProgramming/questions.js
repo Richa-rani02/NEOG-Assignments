@@ -114,6 +114,7 @@ console.log(res);
 
 
 /*  7 (a)
+
 const input=["apple","papaya","mango","orange"];
 
 // const findcharnum=(acc,cur)=>acc[cur.length]===undefined?{...acc,[cur.length]:1}:{...acc,[cur.length]:acc[cur.length]+1};
@@ -127,12 +128,12 @@ const charres=input.reduce((acc,cur)=>{
 }
     ,{});
 
-const charres=input.reduce(findcharnum);
+const charres=input.reduce(findcharnum,{});
 console.log(charres);
 
-
-
 */
+
+
 
 
 
@@ -154,9 +155,23 @@ console.log(printnameid)
 */
 
 /* 10
-*/
+
 
 const increment=num=>num+1;
 const square=num=>num*num;
 
-const compose=
+const compose=(...rest)=>{
+    return (num)=>{
+        // console.log("called");
+       return rest.reduce((acc,curr)=>{
+        //    console.log(acc,curr);
+           return curr(acc);
+       },num);
+    }
+}
+const res=compose(increment,square);
+console.log(res(2));
+*/
+
+/* 11
+*/
