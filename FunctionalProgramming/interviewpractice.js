@@ -202,6 +202,18 @@ const res=arr.map(element=>element).join("-");
 console.log(res);
 */
 /* 12
+let num=24345687;
+const findEven=(num)=>{
+   let strsplit=num.toString().split('');
+   let numArr = strsplit.map(Number);
+  for(let i=0 ;i<numArr.length;i++){
+      if(numArr[i-1]%2===0 && numArr[i]%2===0){
+          numArr.splice(i,0,'-')
+      }
+  }
+  return numArr.join('');
+}
+console.log(findEven(num));
 */
 
 /* 13
